@@ -4,31 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d5d151f5417d488b8977eb6b94f790c9" Name="Diagram1">
-        <EntityTypeShape EntityType="user23Model.App" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Client" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Courses" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Group" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Levels" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Message" Width="1.5" PointX="12" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Online_coach" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Program" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.role" Width="1.5" PointX="12.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Themes" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.Topics" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="user23Model.user" Width="1.5" PointX="15" PointY="4.625" IsExpanded="true" />
-        <AssociationConnector Association="user23Model.FK_App_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_App_Courses" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Client_Levels" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Courses_Levels" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Courses_Program" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Topics_Courses" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Message_Group" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_user_Group" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Message_user" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_user_role" ManuallyRouted="false" />
-        <AssociationConnector Association="user23Model.FK_Themes_Topics" ManuallyRouted="false" />
+      <Diagram DiagramId="0ac1cd133eb8408dae264a30589cd848" Name="Diagram1">
+        <EntityTypeShape EntityType="MolochnikovKursModel.App" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Client" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Courses" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Levels" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Online_coach" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Program" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Themes" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MolochnikovKursModel.Topics" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_App_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_App_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_Client_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_Courses_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_Courses_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_Topics_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="MolochnikovKursModel.FK_Themes_Topics" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

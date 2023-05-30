@@ -14,7 +14,7 @@ namespace Diplom.View.Pages
         {
             InitializeComponent();
 
-            SqlConnection connection = new SqlConnection("data source=SQL;initial catalog=MolochnikovKurs;integrated security=True");
+            SqlConnection connection = new SqlConnection("data source=DESKTOP-EDS6SSR;initial catalog=MolochnikovKurs;integrated security=True");
             connection.Open();
 
             string query = @"SELECT t.name AS TopicsName, th.name AS ThemesName, l.name AS LevelsName, c.name AS CoursesName

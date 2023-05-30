@@ -9,6 +9,6 @@ namespace Diplom.AppData
 {
     public partial class Context
     {
-        public static user23Entities molochnikovKurs = new user23Entities();
+        public static MolochnikovKursEntities molochnikovKurs = new MolochnikovKursEntities();
     }
 }

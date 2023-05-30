@@ -29,26 +29,37 @@ namespace Diplom.View.Pages
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            
+            SkillBoxPage skillBoxPage = new SkillBoxPage(); 
+
+            NavigationService.Navigate(skillBoxPage);
         }
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
+            NetologyPage netologyPage = new NetologyPage();
 
+            NavigationService.Navigate(netologyPage);   
         }
 
         private void btn4_Click(object sender, RoutedEventArgs e)
         {
+            PrakticePage prakticePage = new PrakticePage();
 
+            NavigationService.Navigate(prakticePage);
         }
 
         private void btn5_Click(object sender, RoutedEventArgs e)
         {
+            SkillFacPage skillFacPage = new SkillFacPage();
 
+            NavigationService.Navigate(skillFacPage);
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
+            GeekPage geekPage = new GeekPage(); 
+
+            NavigationService.Navigate(geekPage);
 
         }
     }

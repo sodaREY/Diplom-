@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище user23Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище MolochnikovKursModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="App">
           <Key>
             <PropertyRef Name="id" />
@@ -33,28 +33,12 @@
           <Property Name="program" Type="int" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Group">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Levels">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Message">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="text" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="idGroup" Type="int" Nullable="false" />
-          <Property Name="idUser" Type="int" />
         </EntityType>
         <EntityType Name="Online coach">
           <Key>
@@ -63,13 +47,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Program">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="role">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -102,17 +79,6 @@
           <Property Name="courses" Type="int" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="duration" Type="int" />
-        </EntityType>
-        <EntityType Name="user">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="login" Type="nvarchar" MaxLength="50" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" />
-          <Property Name="FIO" Type="nvarchar" MaxLength="150" />
-          <Property Name="idRole" Type="int" />
-          <Property Name="idGroup" Type="int" />
         </EntityType>
         <Association Name="FK_App_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
@@ -174,30 +140,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Message_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="1" />
-          <End Role="Message" Type="Self.Message" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Group">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Message">
-              <PropertyRef Name="idGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Message_user">
-          <End Role="user" Type="Self.user" Multiplicity="0..1" />
-          <End Role="Message" Type="Self.Message" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Message">
-              <PropertyRef Name="idUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Themes_Topics">
           <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
           <End Role="Themes" Type="Self.Themes" Multiplicity="*" />
@@ -222,44 +164,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
-          <End Role="user" Type="Self.user" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Group">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="user">
-              <PropertyRef Name="idGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_user_role">
-          <End Role="role" Type="Self.role" Multiplicity="0..1" />
-          <End Role="user" Type="Self.user" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="role">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="user">
-              <PropertyRef Name="idRole" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="Хранилище user23ModelContainer">
+        <EntityContainer Name="Хранилище MolochnikovKursModelContainer">
           <EntitySet Name="App" EntityType="Self.App" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Levels" EntityType="Self.Levels" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Online coach" EntityType="Self.Online coach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Themes" EntityType="Self.Themes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_App_Client" Association="Self.FK_App_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="App" EntitySet="App" />
@@ -280,14 +194,6 @@
             <End Role="Program" EntitySet="Program" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_Group" Association="Self.FK_Message_Group">
-            <End Role="Group" EntitySet="Group" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Message_user" Association="Self.FK_Message_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
           <AssociationSet Name="FK_Themes_Topics" Association="Self.FK_Themes_Topics">
             <End Role="Topics" EntitySet="Topics" />
             <End Role="Themes" EntitySet="Themes" />
@@ -296,20 +202,12 @@
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Topics" EntitySet="Topics" />
           </AssociationSet>
-          <AssociationSet Name="FK_user_Group" Association="Self.FK_user_Group">
-            <End Role="Group" EntitySet="Group" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
-            <End Role="role" EntitySet="role" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="user23Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MolochnikovKursModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="App">
           <Key>
             <PropertyRef Name="id" />
@@ -346,15 +244,6 @@
           <NavigationProperty Name="Program1" Relationship="Self.FK_Courses_Program" FromRole="Courses" ToRole="Program" />
           <NavigationProperty Name="Topics" Relationship="Self.FK_Topics_Courses" FromRole="Courses" ToRole="Topics" />
         </EntityType>
-        <EntityType Name="Group">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Message" Relationship="Self.FK_Message_Group" FromRole="Group" ToRole="Message" />
-          <NavigationProperty Name="user" Relationship="Self.FK_user_Group" FromRole="Group" ToRole="user" />
-        </EntityType>
         <EntityType Name="Levels">
           <Key>
             <PropertyRef Name="id" />
@@ -363,17 +252,6 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Client_Levels" FromRole="Levels" ToRole="Client" />
           <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Levels" FromRole="Levels" ToRole="Courses" />
-        </EntityType>
-        <EntityType Name="Message">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="idGroup" Type="Int32" Nullable="false" />
-          <Property Name="idUser" Type="Int32" />
-          <NavigationProperty Name="Group" Relationship="Self.FK_Message_Group" FromRole="Message" ToRole="Group" />
-          <NavigationProperty Name="user" Relationship="Self.FK_Message_user" FromRole="Message" ToRole="user" />
         </EntityType>
         <EntityType Name="Online_coach">
           <Key>
@@ -388,14 +266,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Program" FromRole="Program" ToRole="Courses" />
-        </EntityType>
-        <EntityType Name="role">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="user" Relationship="Self.FK_user_role" FromRole="role" ToRole="user" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -426,20 +296,6 @@
           <Property Name="duration" Type="Int32" />
           <NavigationProperty Name="Courses1" Relationship="Self.FK_Topics_Courses" FromRole="Topics" ToRole="Courses" />
           <NavigationProperty Name="Themes" Relationship="Self.FK_Themes_Topics" FromRole="Topics" ToRole="Themes" />
-        </EntityType>
-        <EntityType Name="user">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FIO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="idRole" Type="Int32" />
-          <Property Name="idGroup" Type="Int32" />
-          <NavigationProperty Name="Group" Relationship="Self.FK_user_Group" FromRole="user" ToRole="Group" />
-          <NavigationProperty Name="Message" Relationship="Self.FK_Message_user" FromRole="user" ToRole="Message" />
-          <NavigationProperty Name="role" Relationship="Self.FK_user_role" FromRole="user" ToRole="role" />
         </EntityType>
         <Association Name="FK_App_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
@@ -513,54 +369,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Message_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="1" />
-          <End Role="Message" Type="Self.Message" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Group">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Message">
-              <PropertyRef Name="idGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_user_Group">
-          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
-          <End Role="user" Type="Self.user" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Group">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="user">
-              <PropertyRef Name="idGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Message_user">
-          <End Role="user" Type="Self.user" Multiplicity="0..1" />
-          <End Role="Message" Type="Self.Message" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Message">
-              <PropertyRef Name="idUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_user_role">
-          <End Role="role" Type="Self.role" Multiplicity="0..1" />
-          <End Role="user" Type="Self.user" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="role">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="user">
-              <PropertyRef Name="idRole" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Themes_Topics">
           <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
           <End Role="Themes" Type="Self.Themes" Multiplicity="*" />
@@ -573,20 +381,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="user23Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MolochnikovKursEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="App" EntityType="Self.App" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Courses" EntityType="Self.Courses" />
-          <EntitySet Name="Group" EntityType="Self.Group" />
           <EntitySet Name="Levels" EntityType="Self.Levels" />
-          <EntitySet Name="Message" EntityType="Self.Message" />
           <EntitySet Name="Online_coach" EntityType="Self.Online_coach" />
           <EntitySet Name="Program" EntityType="Self.Program" />
-          <EntitySet Name="role" EntityType="Self.role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Themes" EntityType="Self.Themes" />
           <EntitySet Name="Topics" EntityType="Self.Topics" />
-          <EntitySet Name="user" EntityType="Self.user" />
           <AssociationSet Name="FK_App_Client" Association="Self.FK_App_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="App" EntitySet="App" />
@@ -611,22 +415,6 @@
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Topics" EntitySet="Topics" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_Group" Association="Self.FK_Message_Group">
-            <End Role="Group" EntitySet="Group" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_Group" Association="Self.FK_user_Group">
-            <End Role="Group" EntitySet="Group" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Message_user" Association="Self.FK_Message_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
-            <End Role="role" EntitySet="role" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
           <AssociationSet Name="FK_Themes_Topics" Association="Self.FK_Themes_Topics">
             <End Role="Topics" EntitySet="Topics" />
             <End Role="Themes" EntitySet="Themes" />
@@ -637,9 +425,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище user23ModelContainer" CdmEntityContainer="user23Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MolochnikovKursModelContainer" CdmEntityContainer="MolochnikovKursEntities">
           <EntitySetMapping Name="App">
-            <EntityTypeMapping TypeName="user23Model.App">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.App">
               <MappingFragment StoreEntitySet="App">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="client" ColumnName="client" />
@@ -649,7 +437,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Client">
-            <EntityTypeMapping TypeName="user23Model.Client">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="FIO" ColumnName="FIO" />
@@ -660,7 +448,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="user23Model.Courses">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Courses">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="levels" ColumnName="levels" />
@@ -669,57 +457,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Group">
-            <EntityTypeMapping TypeName="user23Model.Group">
-              <MappingFragment StoreEntitySet="Group">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Levels">
-            <EntityTypeMapping TypeName="user23Model.Levels">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Levels">
               <MappingFragment StoreEntitySet="Levels">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Message">
-            <EntityTypeMapping TypeName="user23Model.Message">
-              <MappingFragment StoreEntitySet="Message">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="idGroup" ColumnName="idGroup" />
-                <ScalarProperty Name="idUser" ColumnName="idUser" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Online_coach">
-            <EntityTypeMapping TypeName="user23Model.Online_coach">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Online_coach">
               <MappingFragment StoreEntitySet="Online coach">
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Program">
-            <EntityTypeMapping TypeName="user23Model.Program">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Program">
               <MappingFragment StoreEntitySet="Program">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="role">
-            <EntityTypeMapping TypeName="user23Model.role">
-              <MappingFragment StoreEntitySet="role">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="user23Model.sysdiagrams">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -730,7 +492,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Themes">
-            <EntityTypeMapping TypeName="user23Model.Themes">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Themes">
               <MappingFragment StoreEntitySet="Themes">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="topics" ColumnName="topics" />
@@ -739,24 +501,12 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Topics">
-            <EntityTypeMapping TypeName="user23Model.Topics">
+            <EntityTypeMapping TypeName="MolochnikovKursModel.Topics">
               <MappingFragment StoreEntitySet="Topics">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="courses" ColumnName="courses" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="user">
-            <EntityTypeMapping TypeName="user23Model.user">
-              <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="FIO" ColumnName="FIO" />
-                <ScalarProperty Name="idRole" ColumnName="idRole" />
-                <ScalarProperty Name="idGroup" ColumnName="idGroup" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

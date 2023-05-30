@@ -85,5 +85,10 @@ namespace Diplom.View.WIndows
             MainFrame.Navigate(new CoursesPage3());
 
         }
+
+        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }

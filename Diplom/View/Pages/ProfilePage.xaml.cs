@@ -40,7 +40,7 @@ namespace Diplom.View.Pages
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection connection = new SqlConnection("data source=SQL;initial catalog=MolochnikovKurs;integrated security=True");
+            SqlConnection connection = new SqlConnection("data source=DESKTOP-EDS6SSR;initial catalog=MolochnikovKurs;integrated security=True");
             connection.Open();
 
             string levelName = (string)cmb.SelectionBoxItemStringFormat; // выбранное название уровня
