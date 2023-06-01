@@ -71,8 +71,8 @@ namespace Diplom.View.WIndows
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new ProfilePage());
-            MessageBox.Show("Выберите уровень");
+            //MainFrame.Navigate(new ProfilePage());
+            //MessageBox.Show("Выберите уровень");
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)

@@ -4,6 +4,15 @@
              xmlns:local="clr-namespace:Diplom"
              StartupUri="View/Windows/LoginWindow.xaml">
     <Application.Resources>
+       
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dialogs.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>-->
 
         <!--Стиль для кнопок левой панели-->
         <Style TargetType="Button" x:Key="LeftPanelBtn">
@@ -182,4 +191,5 @@
         
 
     </Application.Resources>
+    
 </Application>

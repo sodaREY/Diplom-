@@ -38,40 +38,40 @@ namespace Diplom.View.Pages
             //};
         }
 
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            SqlConnection connection = new SqlConnection("data source=DESKTOP-EDS6SSR;initial catalog=MolochnikovKurs;integrated security=True");
-            connection.Open();
+        //private void btn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SqlConnection connection = new SqlConnection("data source=DESKTOP-EDS6SSR;initial catalog=MolochnikovKurs;integrated security=True");
+        //    connection.Open();
 
-            string levelName = (string)cmb.SelectionBoxItemStringFormat; // выбранное название уровня
-            int levelId;
+        //    string levelName = (string)cmb.SelectionBoxItemStringFormat; // выбранное название уровня
+        //    int levelId;
 
-            // запрос на выборку id уровня с заданным именем
-            SqlCommand command = new SqlCommand("SELECT id FROM Levels WHERE name='" + levelName + "'", connection);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                levelId = reader.GetInt32(0);
+        //    // запрос на выборку id уровня с заданным именем
+        //    SqlCommand command = new SqlCommand("SELECT id FROM Levels WHERE name='" + levelName + "'", connection);
+        //    SqlDataReader reader = command.ExecuteReader();
+        //    if (reader.Read())
+        //    {
+        //        levelId = reader.GetInt32(0);
 
-                // запрос на изменение атрибута courses у клиента с заданным идентификатором
-                command = new SqlCommand("UPDATE Clients SET courses=" + levelId + " WHERE id=" + 5, connection);
-                command.ExecuteNonQuery();
+        //        // запрос на изменение атрибута courses у клиента с заданным идентификатором
+        //        command = new SqlCommand("UPDATE Clients SET courses=" + levelId + " WHERE id=" + 5, connection);
+        //        command.ExecuteNonQuery();
 
-            }
-            Model.Levels levels = new Model.Levels()
-            {
-                name = cmb.SelectionBoxItemStringFormat 
-        };
-            //ModelHelper.user23Entities.Client.Add(client);
-            Context.molochnikovKurs.SaveChanges();
-            //MessageBox.Show("Учетная запись создана");
-            //txb.Text = "";
+        //    }
+        //    Model.Levels levels = new Model.Levels()
+        //    {
+        //        name = cmb.SelectionBoxItemStringFormat 
+        //};
+        //    //ModelHelper.user23Entities.Client.Add(client);
+        //    Context.molochnikovKurs.SaveChanges();
+        //    //MessageBox.Show("Учетная запись создана");
+        //    //txb.Text = "";
 
 
-            Context.molochnikovKurs.SaveChanges();
+        //    Context.molochnikovKurs.SaveChanges();
 
-            connection.Close();
-            MessageBox.Show("уровень выбран");
-        }
+        //    connection.Close();
+        //    MessageBox.Show("уровень выбран");
+        //}
     }
 }

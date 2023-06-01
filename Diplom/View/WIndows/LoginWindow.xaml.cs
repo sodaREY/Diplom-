@@ -1,5 +1,6 @@
 ﻿using Diplom.AppData;
 using Diplom.Model;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,27 @@ namespace Diplom.View.WIndows
     /// </summary>
     public partial class LoginWindow : Window
     {
+        
         public static Client curUser { get; set; }
         public LoginWindow()
         {
             InitializeComponent();
         }
+
+        //public void ShowInfoMessage(string message)
+        //{
+        //    // вызываем MaterialMessageBox с кнопкой ОК
+        //    var messageBox = new MaterialMessageBox
+        //    {
+        //        MessageFontSize = 18,
+        //        Message = message,
+        //        OkButtonMessage = "OK"
+        //    };
+        //    messageBox.ShowDialog();
+
+        //    // для закрытия с помощью кнопки ОК используем событие Closed
+        //    messageBox.Closed += (s, e) => messageBox = null;
+        //}
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -74,6 +91,7 @@ namespace Diplom.View.WIndows
                 curUser = user;
                 StartWIndow mainWindow = new StartWIndow();
                 mainWindow.Show();
+
                 MessageBox.Show("Добро пожаловать");
                 this.Close();
             }
