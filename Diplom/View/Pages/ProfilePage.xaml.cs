@@ -25,9 +25,9 @@ namespace Diplom.View.Pages
         public ProfilePage()
         {
             InitializeComponent();
-            cmb.SelectedValuePath = "id";
-            cmb.DisplayMemberPath = "name";
-            cmb.ItemsSource = Context.molochnikovKurs.Levels.ToList();
+            //cmb.SelectedValuePath = "id";
+            //cmb.DisplayMemberPath = "name";
+            //cmb.ItemsSource = Context.molochnikovKurs.Levels.ToList();
             //ComboBox cmb = new ComboBox();
 
             //cmb.Items.AddRange(new string[] { "начальный 1", "средний 2", "высок 3", "" });

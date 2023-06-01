@@ -30,7 +30,19 @@ namespace Diplom.View.Pages
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
+           
 
+            if(Flowerlist.SelectedItem != null)
+            {
+                int num1 = Convert.ToInt32(ItemAmountTb1.Text);
+                Client client = (Client)Flowerlist.SelectedItem;
+                client.FIO = ItemIdTb.Text;
+                client.login = ItemNameTb.Text;
+                client.password = ItemAmountTb.Text;
+                client.levels = num1;
+                Context.molochnikovKurs.SaveChanges();
+                Flowerlist.ItemsSource = Context.molochnikovKurs.Client.ToList();
+            }
         }
 
         private void Insert_Click(object sender, RoutedEventArgs e)
@@ -48,7 +60,14 @@ namespace Diplom.View.Pages
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+           
+            if (Flowerlist.SelectedItem != null)
+            {
+                Client client = (Client)Flowerlist.SelectedItem;
+                Context.molochnikovKurs.Client.Remove(client);
+                Context.molochnikovKurs.SaveChanges();
+                Flowerlist.ItemsSource = Context.molochnikovKurs.Client.ToList();
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

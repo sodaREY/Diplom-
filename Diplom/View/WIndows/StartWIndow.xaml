@@ -6,7 +6,7 @@
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Diplom.View.WIndows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" MinHeight="720" MinWidth="1280" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="MainWindow" Height="720" Width="1280" MinHeight="720" MinWidth="1280" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
 
     <!--Grid оборачиваем в Border, чтобы закруглить углы-->
     <!--Добавляем в свойства окна Background="Transparent" AllowsTransparency="True", чтобы сделать его прозрачным и убрать оконтовку -->
@@ -36,7 +36,7 @@
                 <Border Grid.Row="0" CornerRadius="25 25 0 0" Background="#2F4F4F">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <!--<Image Source="/Resource/icon.png" Width="80" Height="80"/>-->
-                        <Label FontSize="45" Content="FrontoDel" VerticalAlignment="Center" Margin="0 15 0 15"/>
+                        <Button FontSize="45" Content="FrontoDel" VerticalAlignment="Center" Margin="0 15 0 15" Background="Transparent" Click="Button_Click_10"/>
                     </StackPanel>
                 </Border>
 
@@ -55,14 +55,14 @@
 
                        
 
-                        <Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_7">
+                        <!--<Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_7">
                             <Button.Content>
                                 <StackPanel Style="{StaticResource LeftPanelSpl}">
-                                    <!--<Image Source="/Resource/MainWindow/Tovar.png" Style="{StaticResource LeftPanelIcon}"/>-->
-                                    <Label Content="Смена уровня"/>
+                                    --><!--<Image Source="/Resource/MainWindow/Tovar.png" Style="{StaticResource LeftPanelIcon}"/>--><!--
+                                    <Label Content="Наши курсы"/>
                                 </StackPanel>
                             </Button.Content>
-                        </Button>
+                        </Button>-->
 
                         <Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_8">
                             <Button.Content>
@@ -73,14 +73,14 @@
                             </Button.Content>
                         </Button>
 
-                        <Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_9">
+                        <!--<Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_9">
                             <Button.Content>
                                 <StackPanel Style="{StaticResource LeftPanelSpl}">
-                                    <!--<Image Source="/TestDiplom;component/Resource/MainWindow/Client.png" Style="{StaticResource LeftPanelIcon}"/>-->
+                                    --><!--<Image Source="/TestDiplom;component/Resource/MainWindow/Client.png" Style="{StaticResource LeftPanelIcon}"/>--><!--
                                     <Label Content="Наши курсы"/>
                                 </StackPanel>
                             </Button.Content>
-                        </Button>
+                        </Button>-->
 
                         <Button Style="{StaticResource LeftPanelBtn}" Click="Button_Click_6">
                             <Button.Content>

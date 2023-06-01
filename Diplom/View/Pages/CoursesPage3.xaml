@@ -11,15 +11,72 @@
 
    
     <Grid>
-        <ListView  Name="listBox">
-            <!--<ListView.View>
+        <!--<ListView  Name="listBox">
+            --><!--<ListView.View>
                 <GridView>
                     <GridViewColumn Header="Topics Name" DisplayMemberBinding="{Binding Path=name}" />
                     <GridViewColumn Header="Themes" DisplayMemberBinding="{Binding Path=name}" />
                     <GridViewColumn Header="Levels" DisplayMemberBinding="{Binding Path=name}" />
                     <GridViewColumn Header="Courses" DisplayMemberBinding="{Binding Path=name}" />
                 </GridView>
-            </ListView.View>-->
-        </ListView>
+            </ListView.View>--><!--
+        </ListView>-->
+        <Grid Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <DataGrid  AutoGenerateColumns ="False" IsReadOnly="True" Name="Flowerlist" Background="Black">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id " Width="*" Binding="{Binding id}"/>
+                    <DataGridTextColumn Header="FIO" Width="*"  Binding="{Binding FIO}"/>
+                    <DataGridTextColumn Header="login" Width="*"  Binding="{Binding login}"/>
+                    <DataGridTextColumn Header="password" Width="*" Binding="{Binding password}"/>
+                    <DataGridTextColumn Header="levels " Width="*" Binding="{Binding levels}"/>
+                    <!--<DataGridTextColumn Header="marriage" Width="*" Binding="{Binding marriage}"/>
+                <DataGridTextColumn Header="movement " Width="*" Binding="{Binding movement}"/>
+                <DataGridTextColumn Header="admin " Width="*" Binding="{Binding admin}"/>-->
+                    <!--<DataGridTextColumn Header="conditioner " Width="*" Binding="{Binding conditioner}"/>
+                <DataGridTextColumn Header="amountcad " Width="*" Binding="{Binding amount_cadastre}"/>
+                <DataGridTextColumn Header="marketam " Width="*" Binding="{Binding market_amount}"/>
+                <DataGridTextColumn Header="rental " Width="*" Binding="{Binding rental_value}"/>
+                <DataGridTextColumn Header="lease " Width="*" Binding="{Binding is_on_lease}"/>
+                <DataGridTextColumn Header="manager " Width="*" Binding="{Binding manager}"/>-->
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Column="1" Background="#4682B4">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <!--<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Label Content="Введите ФИО" HorizontalAlignment="Center" FontSize="14"/>
+                    <TextBox Name="ItemIdTb" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Введите логин" HorizontalAlignment="Center" FontSize="14"/>
+                    <TextBox Name="ItemNameTb" TextWrapping="Wrap" Text=""  Width="120" />
+                    <Label Content="Введите пароль" HorizontalAlignment="Center" FontSize="14"/>
+                    <TextBox Name="ItemAmountTb" TextWrapping="Wrap" Text=""  Width="120"/>
+                    <Label Content="Введите уровень" HorizontalAlignment="Center" FontSize="14"/>
+                    <TextBox Name="ItemAmountTb1" TextWrapping="Wrap" Text=""  Width="120"/>
+
+
+                </StackPanel>-->
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                    <Button x:Name="Edit1" Content="Редактировать" Click="Edit1_Click"  HorizontalAlignment="Stretch"
+                        Margin=" 0 20 0 0"/>
+                    <Button x:Name="Insert1" Content="Добавить" Click="Insert1_Click" HorizontalAlignment="Stretch"
+                        Margin=" 0 20 0 0"/>
+                    <Button x:Name="Delete1" Content="Удалить" Click="Delete1_Click"  HorizontalAlignment="Stretch"
+                        Margin=" 0 20 0 0"/>
+                    <!--<Button x:Name="Back" Content="Назад" Click="Back_Click" HorizontalAlignment="Stretch"
+                        Margin=" 0 20 0 0"/>-->
+                </StackPanel>
+
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

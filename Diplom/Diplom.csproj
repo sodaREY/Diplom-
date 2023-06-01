@@ -90,6 +90,7 @@
     <Compile Include="AppData\FrameNavigate.cs" />
     <Compile Include="AppData\Selection2.cs" />
     <Compile Include="AppData\SelectionCo.cs" />
+    <Compile Include="AppData\ViewModel1.cs" />
     <Compile Include="Model\App.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -141,6 +142,9 @@
     <Compile Include="View\Pages\CoursesPage3.xaml.cs">
       <DependentUpon>CoursesPage3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\CoursesPage4.xaml.cs">
+      <DependentUpon>CoursesPage4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\GeekPage.xaml.cs">
       <DependentUpon>GeekPage.xaml</DependentUpon>
     </Compile>
@@ -184,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\CoursesPage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\CoursesPage4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Program">
           <Key>
@@ -257,7 +257,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Program">
           <Key>
@@ -381,7 +381,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MolochnikovKursEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MolochnikovKursEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="App" EntityType="Self.App" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Courses" EntityType="Self.Courses" />
@@ -425,7 +425,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище MolochnikovKursModelContainer" CdmEntityContainer="MolochnikovKursEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MolochnikovKursModelContainer" CdmEntityContainer="MolochnikovKursEntities2">
           <EntitySetMapping Name="App">
             <EntityTypeMapping TypeName="MolochnikovKursModel.App">
               <MappingFragment StoreEntitySet="App">

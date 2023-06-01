@@ -58,5 +58,20 @@ namespace Diplom.View.Pages
 
             //}
         }
+
+        private void Edit1_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void Insert1_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete1_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,10 +13,10 @@ namespace Diplom.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MolochnikovKursEntities : DbContext
+    public partial class MolochnikovKursEntities2 : DbContext
     {
-        public MolochnikovKursEntities()
-            : base("name=MolochnikovKursEntities")
+        public MolochnikovKursEntities2()
+            : base("name=MolochnikovKursEntities2")
         {
         }
     

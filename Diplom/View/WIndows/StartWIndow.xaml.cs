@@ -25,7 +25,14 @@ namespace Diplom.View.WIndows
         public StartWIndow()
         {
             InitializeComponent();
+            MainFrame.NavigationService.Navigate(new ProfilePage());
         }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //YourPage - название вашей страницы, которую нужно открыть
+        }
+
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -71,7 +78,7 @@ namespace Diplom.View.WIndows
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            //MainFrame.Navigate(new ProfilePage());
+            MainFrame.Navigate(new CoursesPage3());
             //MessageBox.Show("Выберите уровень");
         }
 
@@ -89,6 +96,11 @@ namespace Diplom.View.WIndows
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
 
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ProfilePage());
         }
     }
 }
